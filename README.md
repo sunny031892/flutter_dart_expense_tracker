@@ -5,11 +5,9 @@ The lab project (courses > software-studio > 2024-spring > lab-flutter-basics-da
 
 
 
-# Video demo
+# Video Demo
 
 ![](img/lab04.mp4)
-
-
 
 # Description
 As you can see from the demo video, we want to see a **additional button** on the app bar which leads to a tutorial screen,  
