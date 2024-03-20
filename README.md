@@ -6,6 +6,7 @@ The lab project (courses > software-studio > 2024-spring > lab-flutter-basics-da
 
 
 # Video Demo
+- [Youtube](https://youtube.com/shorts/zTxxmoRmV3M?feature=shared)
 
 ![](img/lab04.mp4)
 
