@@ -7,11 +7,9 @@ The lab project (courses > software-studio > 2024-spring > lab-flutter-basics-da
 
 # Video demo
 
-<video src="img/lab04.mov" width="524" height="940" controls></video>
+![](img/lab04.mp4)
 
-40(tutorial screen includes two page icons text and buttons as well as display it in appbar)
-40(scrolling effect with different translation speeds)
-20(buttons on each page view)
+
 
 # Description
 As you can see from the demo video, we want to see a **additional button** on the app bar which leads to a tutorial screen,  
