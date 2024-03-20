@@ -1,0 +1,1 @@
+ /Users/victor890915/Desktop/school/school/SSTA/Lab04/lab04/lab-flutter-basics-dart-expense-tracker-parallax/.dart_tool/flutter_build/eff50074785a8b29f5935e6863798596/native_assets.yaml: 

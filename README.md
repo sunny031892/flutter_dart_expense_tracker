@@ -1,33 +1,55 @@
 # Lab 04 Expense app with parallax scrolling
 
-During this lab session, you will address **two bugs** in the quiz application discussed in class. The lab project (courses > software-studio > 2024-spring > lab-flutter-basics-dart-quiz-app) provides the quiz application with pre-existing bugs.
-
-The first part is to **resolve the error** that occurred during the **initial round**, described as follows:
-
-<br>( 20% )<br> 
-<br>![component](img/step 1.png)<br> 
-
-During the **subsequent round** of troubleshooting, an error, illustrated in the figure below, is expected to manifest:
-
-<br>( 20% )<br> 
-<br>![component](img/step 2.png)<br> 
+During this lab session, you will need to **add a tutorial screen** with **scrolling function** and **parallax scrolling effects** to the expense application discussed in class.  
+The lab project (courses > software-studio > 2024-spring > lab-flutter-basics-dart-expense-tracker-parallax) provides the expense tracker app with parallax scrollong effect on the item list for you to build on top of.
 
 
-<br>( 60% )<br> 
 
-The second part is to **enhance the appearance of the ResultsScreen**. A comparison between the **original screen** and the **desired outcome** is provided:
+# Video demo
 
-<br>![component](img/step 3_1.png)<br> 
-<br>![component](img/step 3_2.png)<br> 
+<video src="img/lab04.mov" width="524" height="940" controls></video>
 
-Adjustments include 
+40(tutorial screen includes two page icons text and buttons as well as display it in appbar)
+40(scrolling effect with different translation speeds)
+20(buttons on each page view)
 
-<br>( 20% ) modifying the **font size** of the title (including the number of correct answers and the question title). <br> 
+# Description
+As you can see from the demo video, we want to see a **additional button** on the app bar which leads to a tutorial screen,  
+In the screen, there should be two swipeable (left to right) screens, each of which contains some guidence to use the expense tracker app  
+and a button that performs different actions.  
+The icons and text can be arbitrary, meaning that we won't duduct points based on the content. 
 
-<br>( 20% ) Additionally, display a **circular background** behind the question index. **Different colors**(Correct -> Color.fromARGB(255, 150, 198, 241), Wrong -> Color.fromARGB(255, 249, 133, 241)) will be used to indicate correctness or errors.<br> 
+# Grading
+1. Add a button on the appbar to navigate to an tutorial page **(20%)**  
+  
 
-<br>( 20% ) The **user's selected option** should be represented in a **translucent purple color** (Color.fromARGB(255, 202, 171, 252)), while the correct solution should be highlighted by a **translucent green color** (Color.fromARGB(255, 181, 254, 246)).
-<br> 
+2. Implement a swipaeble tutorial page with two pages **(30%)**
+    - The pages thould be left-right swipeable
+
+
+3. Apply parallax scrolling effects on each widget of the tutorial page **(30%)**
+    - The text should move at 1.5x moving speed
+    - the button should move at 2.5x moving speed
+
+
+4. Program the buttons to perform the following actions **(20%)**
+    - The button on the first page should scroll the page to the second page
+    - The button on the second page should dismiss the tutorial page 
+
+
+# Hints
+- There is a widget for swipeable pages  **Pageview**, There is a link to the documentation at the resources below.  
+
+- Use Transform instead of Flow to do the parallax effect because no custom layout is needed
+- In the PageView widget, a **Pagecontroller** is needed, the **page** propery indicates how far the page has been scrolled  
+  you may want to set a listener to detect it's changes
+
+# Even more hints
+- listening to changes on the PageController are a lot like listening to the **Focusnode** in new_expense.dart  
+
+- You may need to know the screen width in order to determin how much the scrolling effect should be.    
+
+
 
 ## Deadline
 Submit your work before 2024/03/21 (Thur.) 17:20:00.
@@ -42,6 +64,6 @@ The score of other part you have done after 17:20:00 will be 60%.
 
 A few introductory tutorials crafted to assist you in completing today's lab.
 
-- [List](https://api.flutter.dev/flutter/dart-core/List-class.html)
-- [TextStyle](https://api.flutter.dev/flutter/painting/TextStyle-class.html) and [GoogleFonts](https://pub.dev/packages/google_fonts)
-- [BoxDecoration](https://api.flutter.dev/flutter/painting/BoxDecoration-class.html)
+- [PageView](https://api.flutter.dev/flutter/widgets/PageView-class.html)
+- [PageController](https://api.flutter.dev/flutter/painting/TextStyle-class.html)
+
