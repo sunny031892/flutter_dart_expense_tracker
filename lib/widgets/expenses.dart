@@ -6,6 +6,7 @@ import 'package:flutter_app/widgets/expenses_list/expenses_list.dart';
 import 'package:flutter_app/widgets/expenses_list/expenses_list_sliver.dart';
 import 'package:flutter_app/models/expense.dart';
 import 'package:flutter_app/widgets/chart/chart.dart';
+import 'package:flutter_app/widgets/tutorial_page.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -108,6 +109,15 @@ class _ExpensesState extends State<Expenses> {
       title: const Text('Expense Tracker'),
       actions: [
         IconButton(
+          icon: Icon(Icons.help_outline),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TutorialPage()),
+            );
+          },
+        ),
+        IconButton(
           onPressed: _openAddExpenseOverlay,
           icon: const Icon(Icons.add),
         ),
@@ -134,6 +144,15 @@ class _ExpensesState extends State<Expenses> {
             ),
           ),
           actions: [
+            IconButton(  // 新增的按钮
+              icon: Icon(Icons.help_outline),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TutorialPage()),
+                );
+              },
+            ),
             IconButton(
               onPressed: _openAddExpenseOverlay,
               icon: const Icon(Icons.add),
