@@ -8,6 +8,7 @@ class TutorialPage extends StatefulWidget {
 class _TutorialPageState extends State<TutorialPage> {
   final PageController _pageController = PageController(initialPage: 0);
 
+  @override
   void initState() {
     super.initState();
     Future.delayed(Duration(milliseconds: 100)).then((_) {
@@ -16,6 +17,7 @@ class _TutorialPageState extends State<TutorialPage> {
       }
     });
   }
+
   @override
   void dispose() {
     _pageController.dispose();
@@ -69,6 +71,10 @@ class _TutorialPageState extends State<TutorialPage> {
     IconData? iconData,
   }) {
     double screenWidth = MediaQuery.of(context).size.width;
+    Color textColor = Theme.of(context).brightness == Brightness.dark
+        ? Colors.white
+        : Colors.black; // Adjusts text color based on theme brightness
+
     return AnimatedBuilder(
       animation: pageController,
       builder: (context, child) {
@@ -88,11 +94,11 @@ class _TutorialPageState extends State<TutorialPage> {
                     child: Icon(
                       iconData,
                       size: screenWidth * 0.15,
-                      color: Colors.white,
+                      color: textColor, // Use adjusted text color
                     ),
                   ),
                 ),
-              SizedBox(height: 48), 
+              SizedBox(height: 48),
               Transform.translate(
                 offset: Offset(-pageOffset * screenWidth * 0.5, 0),
                 child: Opacity(
@@ -101,7 +107,7 @@ class _TutorialPageState extends State<TutorialPage> {
                     text,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: textColor, // Use adjusted text color
                       fontSize: 16.0,
                     ),
                   ),
@@ -109,10 +115,10 @@ class _TutorialPageState extends State<TutorialPage> {
               ),
               SizedBox(height: 32),
               Transform.translate(
-                offset: Offset(-pageOffset * screenWidth * 1, 0),
+                offset: Offset(-pageOffset * screenWidth, 0),
                 child: ElevatedButton(
                   onPressed: onPressed,
-                  child: Text(buttonText),
+                  child: Text(buttonText, style: TextStyle(color: textColor)), // Use adjusted text color
                 ),
               ),
             ],
